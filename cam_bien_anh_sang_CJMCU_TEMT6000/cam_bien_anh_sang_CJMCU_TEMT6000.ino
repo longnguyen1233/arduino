@@ -5,7 +5,7 @@ void setup() {
 }
 
 void loop() {
-  int value = analogRead(temt6000Pin);
-  Serial.println(value); 
+  float value = analogRead(temt6000Pin);
+  Serial.println((value/1023)*25); 
   delay(200);
 }
