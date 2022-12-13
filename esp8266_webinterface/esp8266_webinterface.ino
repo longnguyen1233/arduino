@@ -56,12 +56,14 @@
 extern const char index_html[];
 extern const char main_js[];
 
-#define WIFI_SSID "Turtle"
-#define WIFI_PASSWORD "khongcho"
+//#define WIFI_SSID "Turtle"
+//#define WIFI_PASSWORD "khongcho"
+#define WIFI_SSID "DienTuTuyetNga-2.4G"
+#define WIFI_PASSWORD "baovy0111"
 
 //#define STATIC_IP                       // uncomment for static IP, set IP below
 #ifdef STATIC_IP
-  IPAddress ip(192,168,1,123);
+  IPAddress ip(192,168,1,15);
   IPAddress gateway(192,168,1,1);
   IPAddress subnet(255,255,255,0);
 #endif
@@ -71,9 +73,9 @@ extern const char main_js[];
 #define max(a,b) ((a)>(b)?(a):(b))
 
 #define LED_PIN 2                       // 0 = GPIO0, 2=GPIO2
-#define LED_COUNT 24
+#define LED_COUNT 300
 
-#define WIFI_TIMEOUT 30000              // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
+#define WIFI_TIMEOUT 10000              // checks WiFi every ...ms. Reset after this time, if WiFi cannot reconnect.
 #define HTTP_PORT 80
 
 unsigned long auto_last_change = 0;
