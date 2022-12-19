@@ -13,23 +13,27 @@ License: Remixing or Changing this Thing is allowed. Commercial use is not allow
 */
   
 #include <AFMotor.h>
+#include <SoftwareSerial.h>
+SoftwareSerial BT(2, 3); // RX, TX
 
 //initial motors pin
-AF_DCMotor motor1(1, MOTOR12_1KHZ);
-AF_DCMotor motor2(2, MOTOR12_1KHZ);
-AF_DCMotor motor3(3, MOTOR34_1KHZ);
-AF_DCMotor motor4(4, MOTOR34_1KHZ);
+AF_DCMotor motor1(1, MOTOR12_8KHZ);
+AF_DCMotor motor2(2, MOTOR12_8KHZ);
+AF_DCMotor motor3(3, MOTOR34_8KHZ);
+AF_DCMotor motor4(4, MOTOR34_8KHZ);
   
 int val;
-int Speeed = 255;
+int Speeed = 200;
   
 void setup()
 {
   Serial.begin(9600);  //Set the baud rate to your Bluetooth module.
+  BT.begin(9600);
+  delay(500);
 }
 void loop(){
-  if(Serial.available() > 0){
-    val = Serial.read();
+  if(BT.available() > 0){
+    val = BT.read();
       
     Stop(); //initialize with motors stoped
       
