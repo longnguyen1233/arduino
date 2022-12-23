@@ -26,7 +26,7 @@ byte tim_phai[] = {  B01100,  B11110,  B11111,  B11111,  B11110,  B11100,  B1100
 
 void setup() {
   // put your setup code here, to run once:
-  lcd.begin(); //Khởi tạo màn hình LCD
+  lcd.init(); //Khởi tạo màn hình LCD
   lcd.backlight(); //Bật đèn màn hình lCD 
   dai1=message2.length();
 }
