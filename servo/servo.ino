@@ -1,5 +1,5 @@
 #include <Servo.h> 
-int servo = 9;
+int servo = 10;
 int goc;
 
 Servo myServo;
