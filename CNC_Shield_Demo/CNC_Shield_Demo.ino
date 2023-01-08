@@ -3,13 +3,13 @@
 // Superb Tech
 // www.youtube.com/superbtech
 
-const int StepX = 2;
-const int DirX = 5;
-const int StepY = 3;
-const int DirY = 6;
-const int StepZ = 4;
-const int DirZ = 7;
-
+const int StepX = 5;
+const int DirX = 2;
+const int StepY = 6;
+const int DirY = 3;
+const int StepZ = 7;
+const int DirZ = 4;
+const int en = 8;
 
 void setup() {
   pinMode(StepX,OUTPUT);
@@ -18,7 +18,8 @@ void setup() {
   pinMode(DirY,OUTPUT);
   pinMode(StepZ,OUTPUT);
   pinMode( DirZ,OUTPUT);
-
+  pinMode( en,OUTPUT);
+  digitalWrite(en, LOW);
 }
 
 void loop() {
@@ -34,21 +35,22 @@ void loop() {
     delayMicroseconds(1000);
   }
   delay(1000);
+   for(int x = 0; x < 400; x++)
+  {
+    digitalWrite(StepY,HIGH); // Cạnh lên
+    delayMicroseconds(1000); //Thời gian xuất xung = tốc độ quay | 400
+    digitalWrite(StepY,LOW); // Cạnh xuống
+    delayMicroseconds(1000);
+  }
+  delay(1000);
+   for(int x = 0; x < 400; x++)
+  {
+    digitalWrite(StepZ,HIGH); // Cạnh lên
+    delayMicroseconds(1000); //Thời gian xuất xung = tốc độ quay | 400
+    digitalWrite(StepZ,LOW); // Cạnh xuống
+    delayMicroseconds(1000);
+  }
+  delay(1000);
 
-// for(int x = 0; x<200; x++) { // loop for 200 steps
-//   digitalWrite(StepY,HIGH);
-//   delayMicroseconds(500);
-//   digitalWrite(StepY,LOW); 
-//   delayMicroseconds(500);
-//  }
-// delay(1000); // delay for 1 second
-
-// for(int x = 0; x<200; x++) { // loop for 200 steps
-//   digitalWrite(StepZ,HIGH);
-//   delayMicroseconds(500);
-//   digitalWrite(StepZ,LOW); 
-//   delayMicroseconds(500);
-//  }
-// delay(1000); // delay for 1 second
-
+  
 }
