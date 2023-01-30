@@ -56,7 +56,7 @@ void setup()
   Serial.begin(9600);
   pinMode(RedLed,OUTPUT);
   
-  lcd.init(); // Khởi tạo màn hình Màn hình
+  lcd.begin(); // Khởi tạo màn hình Màn hình
   lcd.backlight(); // Bật đèn màn hình Màn hình
   lcd.createChar(0, va); // Tạo ký tự đặc biệt &
 

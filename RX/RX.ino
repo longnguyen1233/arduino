@@ -27,19 +27,19 @@ byte macdinh = 1; unsigned int dem = 0;
 
 void home()
 {
-  // servo_1.write(90);
-  // servo_2.write(30);
-  // servo_3.write(0);
-  // servo_4.write(90);
-  // servo_5.write(180);
-  // servo_KEP.write(180); //MO
-
-  servo_1.write(0);
-  servo_2.write(0);
-  servo_3.write(0);
-  servo_4.write(0);
-  servo_5.write(0);
+  servo_1.write(90);
+  servo_2.write(90);
+  servo_3.write(90);
+  servo_4.write(90);
+  servo_5.write(180);
   servo_KEP.write(180); //MO
+
+  // servo_1.write(0);
+  // servo_2.write(0);
+  // servo_3.write(0);
+  // servo_4.write(0);
+  // servo_5.write(0);
+  // servo_KEP.write(180); //MO
   
 }
 
@@ -182,8 +182,7 @@ void setup()
     Serial.println("Chưa kết nối được với RX...!!");
     Serial.println("CHỜ KẾT NỐI.......");
   }     
-
-  //home();
+  home();
 }
 
 void loop() 
@@ -192,9 +191,9 @@ void loop()
   {
     radio.read(&nhan, sizeof(nhan));
   }
-
   if(nhan[4]==0 && nhan[5]==0)
     home();
+ 
   else 
   {
     if(nhan[8] != macdinh)
@@ -220,6 +219,7 @@ void loop()
   Serial.print("  - E= "); Serial.print(nhan[6]); Serial.print("  - F= "); Serial.print(nhan[7]);
   Serial.print("  - KEP= "); Serial.print(nhan[8]);
   Serial.print("  - DEM= "); Serial.print(dem);
+  
 
   Serial.println();  
   delay(30);

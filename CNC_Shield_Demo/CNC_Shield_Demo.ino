@@ -3,13 +3,21 @@
 // Superb Tech
 // www.youtube.com/superbtech
 
-const int StepX = 5;
-const int DirX = 2;
-const int StepY = 6;
-const int DirY = 3;
-const int StepZ = 7;
-const int DirZ = 4;
-const int en = 8;
+// const int StepX = 5;
+// const int DirX = 2;
+// const int StepY = 6;
+// const int DirY = 3;
+// const int StepZ = 7;
+// const int DirZ = 4;
+// const int en = 8;
+
+const int StepX = 2;
+const int DirX = 5;
+const int StepY = 3;
+const int DirY = 6;
+const int StepZ = 4;
+const int DirZ = 7;
+
 
 void setup() {
   pinMode(StepX,OUTPUT);
@@ -18,8 +26,8 @@ void setup() {
   pinMode(DirY,OUTPUT);
   pinMode(StepZ,OUTPUT);
   pinMode( DirZ,OUTPUT);
-  pinMode( en,OUTPUT);
-  digitalWrite(en, LOW);
+ // pinMode( en,OUTPUT);
+  //digitalWrite(en, LOW);
 }
 
 void loop() {
