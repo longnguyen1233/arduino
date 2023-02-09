@@ -2,6 +2,7 @@
 #include "DFRobotDFPlayerMini.h"
 SoftwareSerial mySoftwareSerial(8, 9); // RX, TX
 DFRobotDFPlayerMini myDFPlayer;
+String text;
 void setup() 
 {                 
   
@@ -19,7 +20,7 @@ void loop()
 
 void nhac_mo_dau()
 {
-myDFPlayer.play(1);delay(4000); 
+myDFPlayer.play(1);
 }
 
 

@@ -1,6 +1,6 @@
 String RxBuff = "";                                    // Khai bao bo dem nhan du lieu
 int Index_Rxdata = -1;                           // vi tri cua chuoi nhan duoc
-const String myphone = "0919691943";
+const String myphone = "0377107817";
 //const int PWR_KEY = 4;
 const int status_led = 13;
 void Gsm_Init();                      // Cau hinh Module Sim800C
