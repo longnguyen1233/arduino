@@ -1,4 +1,4 @@
-int cambien = 5; //Chân cảm biến nối chân số 5 Arduino
+ int cambien = 5; //Chân cảm biến nối chân số 5 Arduino
 int giatri;
 
 int den = 11; //Đèn nối vào chân số 11 Arduino
