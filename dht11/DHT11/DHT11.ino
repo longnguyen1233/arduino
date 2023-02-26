@@ -2,8 +2,8 @@
 
 const int DHTPIN = 5;//Chân Out của cảm biến nối chân số 5 Arduino
 
-const int DHTTYPE = DHT11;   // Khai báo kiểu cảm biến là DHT11
-//const int DHTTYPE = DHT22;   // DHT 22 
+// const int DHTTYPE = DHT11;   // Khai báo kiểu cảm biến là DHT11
+const int DHTTYPE = DHT22;   // DHT 22 
 //const int DHTTYPE = DHT21;   // DHT 21 
 
 DHT dht(DHTPIN, DHTTYPE); //Khai báo thư viện chân cảm biến và kiểu cảm biến
