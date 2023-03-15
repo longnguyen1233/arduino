@@ -20,7 +20,6 @@ void loop(void)
   sensors.requestTemperatures();  
   Serial.print("Nhiet do");
   Serial.println(sensors.getTempCByIndex(0)); // vì 1 ic nên dùng 0
- 
   //chờ 1 s rồi đọc để bạn kiệp thấy sự thay đổi
   delay(1000);
 }

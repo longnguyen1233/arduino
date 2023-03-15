@@ -2,7 +2,7 @@
 SoftwareSerial mySerial(2, 3); // RX, TX
 char data_in[100]; //bộ đệm nhận dữ liệu
 int index = 0; // chỉ số cho bộ đệm
-int den=4;
+int den=8;
 void setup()
 {
   Serial.begin(9600);

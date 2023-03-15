@@ -1,7 +1,8 @@
-int temt6000Pin = 0;
+int temt6000Pin = A1;
 
 void setup() {
   Serial.begin(9600);
+  pinMode(temt6000Pin,INPUT);
 }
 
 void loop() {
