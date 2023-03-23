@@ -1,0 +1,32 @@
+[PROJECT]
+Target=D:\Z-Tai lieu giang day\05-Lap trinh PIC16F877A\Phan 1-PIC16F877A giao tiep voi led don\Bai 4-Giao tiep 8 led don PORTD_sang tat dan tu trai sang phai\code\main.hex
+Development_Mode=
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+Processor=0x877A
+[D:\T-Tai lieu\B-Tai lieu PIC\01-Cac noi dung KIT\Phan 1-Giao tiep voi led don\Bai 2-Giao tiep 8 led PORTD _sang tat dan tu trai sang phai\code\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=D:\Z-Tai lieu giang day\05-Lap trinh PIC16F877A\Phan 1-PIC16F877A giao tiep voi led don\Bai 4-Giao tiep 8 led don PORTD_sang tat dan tu trai sang phai\code\main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=D:\Z-Tai lieu giang day\05-Lap trinh PIC16F877A\Phan 1-PIC16F877A giao tiep voi led don\Bai 4-Giao tiep 8 led don PORTD_sang tat dan tu trai sang phai\code\main
+[Opened Files]
+1=main.c
+2=main.h
+3=
+[D:\Z-Tai lieu giang day\05-Lap trinh PIC16F877A\Phan 1-PIC16F877A giao tiep voi led don\Bai 4-Giao tiep 8 led don PORTD_sang tat dan tu trai sang phai\code\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=

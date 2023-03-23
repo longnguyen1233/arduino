@@ -1,0 +1,131 @@
+CCS PCM C Compiler, Version 4.104, 5967               05-Jul-20 19:09
+
+               Filename: D:\Z-Tai lieu giang day\05-Lap trinh PIC16F877A\Phan 1-PIC16F877A giao tiep voi led don\Bai 2-Chop tat 2 LED don PORTD\code\main.lst
+
+               ROM used: 65 words (1%)
+                         Largest free fragment is 2048
+               RAM used: 5 (1%) at main() level
+                         6 (2%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   018
+0003:  NOP
+.................... /*==========================//================================================= 
+....................   * Ten Tep      :        main.c 
+....................   * Tac Gia      :        www.hocdientu123.vn 
+....................   * Ngay         :        25-07-2019 
+....................   * Tom Tat      :        Chuong trinh dieu khien Led don. 
+.................... ==========================//=================================================*/ 
+.................... #include "main.h" 
+.................... #include <16F877A.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #device adc=8 
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+.................... #FUSES HS                    	//High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPUT                 	//No Power Up Timer 
+.................... #FUSES NOPROTECT             	//Code not protected from reading 
+.................... #FUSES NODEBUG               	//No Debug mode for ICD 
+.................... #FUSES NOBROWNOUT            	//No brownout reset 
+.................... #FUSES NOLVP                 	//No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOCPD                 	//No EE protection 
+.................... #FUSES NOWRT                 	//Program memory not write protected 
+.................... #FUSES RESERVED              	//Used to set the reserved FUSE bits 
+....................  
+.................... #use delay(clock=20000000) 
+0004:  MOVLW  21
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  06
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  7B
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+....................  
+....................  
+.................... //=========================khai bao cac chan vao ra=========================// 
+.................... #define  LED1  PIN_D0 
+.................... #define  LED2  PIN_D1 
+.................... //=========================khai bao cac bien va hang=========================// 
+.................... //=========================khai bao cac ham==================================// 
+.................... //=========================ham main===========================================// 
+.................... void main() 
+.................... { 
+0018:  CLRF   04
+0019:  BCF    03.7
+001A:  MOVLW  1F
+001B:  ANDWF  03,F
+001C:  BSF    03.5
+001D:  BSF    1F.0
+001E:  BSF    1F.1
+001F:  BSF    1F.2
+0020:  BCF    1F.3
+0021:  MOVLW  07
+0022:  MOVWF  1C
+....................    //dinh nghia chan LED la chan Output; =0 là Output, =1 la Input 
+....................    set_tris_d(0b00000000);// cho tat ca cac pin cua PORTD la ngo ra 
+0023:  MOVLW  00
+0024:  MOVWF  08
+....................    output_d(0xFF); 
+0025:  CLRF   08
+0026:  MOVLW  FF
+0027:  BCF    03.5
+0028:  MOVWF  08
+....................    while(TRUE)// vong lap vo tan 
+....................    { 
+....................       output_low(LED1); 
+0029:  BSF    03.5
+002A:  BCF    08.0
+002B:  BCF    03.5
+002C:  BCF    08.0
+....................       output_low(LED2);   //sang muc 0 
+002D:  BSF    03.5
+002E:  BCF    08.1
+002F:  BCF    03.5
+0030:  BCF    08.1
+....................       delay_ms(200);       //delay de nhin led sang 
+0031:  MOVLW  C8
+0032:  MOVWF  21
+0033:  CALL   004
+....................       output_high(LED1); 
+0034:  BSF    03.5
+0035:  BCF    08.0
+0036:  BCF    03.5
+0037:  BSF    08.0
+....................       output_high(LED2);   //sang muc 0 
+0038:  BSF    03.5
+0039:  BCF    08.1
+003A:  BCF    03.5
+003B:  BSF    08.1
+....................       delay_ms(200);       //delay de nhin led tat 
+003C:  MOVLW  C8
+003D:  MOVWF  21
+003E:  CALL   004
+....................    } 
+003F:  GOTO   029
+....................  } 
+....................  
+....................  
+....................  
+0040:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F3A   HS NOWDT NOPUT NODEBUG NOPROTECT NOBROWNOUT NOLVP NOCPD NOWRT
