@@ -29,15 +29,15 @@ void loop()
   Serial.print("Y: "); Serial.print(y); Serial.print("      ");
   Serial.print("Z: "); Serial.println(z);
 
-  if (y >= 50 or y <= -50)
-  {
-    digitalWrite(den, HIGH);
-    Serial.println("Đèn sáng");
-  }
-  else
-  {
-    digitalWrite(den, LOW);
-    Serial.println("Đèn tắt");
-  }
+  // if (y >= 50 or y <= -50)
+  // {
+  //   digitalWrite(den, HIGH);
+  //   Serial.println("Đèn sáng");
+  // }
+  // else 
+  // {
+  //   digitalWrite(den, LOW);
+  //   Serial.println("Đèn tắt");
+  // }
   delay(200);
 }
