@@ -32,7 +32,8 @@ void setup() {
 
   audio.setVolume(100);
 
-  audio.connecttohost("http://vis.media-ice.musicradio.com/CapitalMP3");
+  // audio.connecttohost("http://vis.media-ice.musicradio.com/CapitalMP3");
+  audio.connecttohost("http://vis.media-ice.musicradio.com/HeartSouthHamsMP3");
 
 }
 
@@ -43,4 +44,3 @@ void loop()
   audio.loop();
 
 }
-

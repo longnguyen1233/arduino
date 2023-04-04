@@ -1,46 +1,39 @@
-#include "Arduino.h"
+#include <Arduino.h>
+#include <SPIFFS.h>
+#include "WAVFileReader.h"
+#include "SinWaveGenerator.h"
+#include "I2SOutput.h"
 
-#include "WiFi.h"
+// i2s pins
+i2s_pin_config_t i2sPins = {
+    .bck_io_num = GPIO_NUM_27,
+    .ws_io_num = GPIO_NUM_14,
+    .data_out_num = GPIO_NUM_26,
+    .data_in_num = -1};
 
-#include "Audio.h"
+I2SOutput *output;
+SampleSource *sampleSource;
 
-#define I2S_DOUT     25
+void setup()
+{
+  Serial.begin(115200);
 
-#define I2S_BCLK      27
+  Serial.println("Starting up");
 
-#define I2S_LRC        26
+  SPIFFS.begin();
 
-Audio audio;
+  Serial.println("Created sample source");
 
-String ssid =    "DienTuTuyetNga-2.4G";
+  // sampleSource = new SinWaveGenerator(40000, 10000, 0.75);
 
-String password = "baovy0111";
+  sampleSource = new WAVFileReader("/sample.wav");
 
-void setup() {
-
-  WiFi.disconnect();
-
-  WiFi.mode(WIFI_STA);
-
-  WiFi.begin(ssid.c_str(), password.c_str());
-
-  while (WiFi.status() != WL_CONNECTED)
-
-  delay(1500);
-
-  audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
-
-  audio.setVolume(100);
-
-  audio.connecttohost("http://vis.media-ice.musicradio.com/CapitalMP3");
-
+  Serial.println("Starting I2S Output");
+  output = new I2SOutput();
+  output->start(I2S_NUM_1, i2sPins, sampleSource);
 }
 
 void loop()
-
 {
-
-  audio.loop();
-
+  
 }
-
