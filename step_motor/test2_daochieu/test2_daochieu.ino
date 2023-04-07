@@ -20,7 +20,7 @@ void loop()
    * 1 vòng 360' = 360/1.8 = 200 bước
    */
   digitalWrite(dir,LOW); //Chân dir dùng để xác định chiều quay (hoặc thay đổi dây của motor)
-  for(int x = 0; x < 200; x++) //Quay 1 vòng
+  for(int x = 0; x < 600; x++) //Quay 1 vòng
   {
     digitalWrite(tep,HIGH); // Cạnh lên
     delayMicroseconds(400); //Thời gian xuất xung = tốc độ quay
