@@ -6,7 +6,7 @@
 
 
 #include "LedControl.h"
-LedControl lc=LedControl(12,11,10,1);
+LedControl lc=LedControl(12,11,10,2);
 unsigned long delaytime=10;
 
 void setup() {
