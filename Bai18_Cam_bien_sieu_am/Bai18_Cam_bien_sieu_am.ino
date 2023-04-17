@@ -41,6 +41,6 @@ distance = int(duration/2/29.412);
 /* In kết quả ra Serial Monitor */
 Serial.print(distance); 
 Serial.println("cm");
-delay(200);
+// delay(200);
 }
 
